@@ -1,28 +1,23 @@
-name: .NET Core
+build win x86_64:
+  stage: build
+  tags:
+    - win
+    - x86_64
+  script:
+    - echo "I am a build stage job for win x86_64"
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+build win 32:
+  stage: build
+  tags:
+    - win
+    - 32-bit
+  script:
+    - echo "I am a build stage job for win 32"
 
-jobs:
-  build:
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os:  [ubuntu-latest, windows-latest, macOS-latest]
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.301
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+build debian:
+  stage: build
+  tags:
+    - docker
+  image: debian:stretch
+  script:
+    - echo "I am a build stage job for debian, running on docker using debian:stretch image"
