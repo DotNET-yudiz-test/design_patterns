@@ -10,7 +10,7 @@ namespace DesignPatternCode
 {
     internal class Program
     {
-        //test commit 1
+        //test commit 2
         private static void Main(string[] args)
         {
             //AbstractFactory
