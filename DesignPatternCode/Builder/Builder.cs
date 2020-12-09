@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesignPatternCode.Builder
 {
     //Builder is a creational design pattern that lets you construct complex objects step by step.
-    class Builder
+    internal class Builder
     {
         public class Beverage
         {
@@ -20,6 +18,7 @@ namespace DesignPatternCode.Builder
                 return "Hot " + BeverageName + " [" + Water + " ml of water, " + Milk + "ml of milk, " + Sugar + " gm of sugar, " + PowderQuantity + " gm of " + BeverageName + "]\n";
             }
         }
+
         public abstract class BeverageBuilder
         {
             protected Beverage beverage;
@@ -28,15 +27,20 @@ namespace DesignPatternCode.Builder
             {
                 beverage = new Beverage();
             }
+
             public Beverage GetBeverage()
             {
                 return beverage;
             }
 
             public abstract void SetBeverageType();
+
             public abstract void SetWater();
+
             public abstract void SetMilk();
+
             public abstract void SetSugar();
+
             public abstract void SetPowderQuantity();
         }
 
@@ -47,21 +51,25 @@ namespace DesignPatternCode.Builder
                 Console.WriteLine("Step 1 : Boiling water");
                 GetBeverage().Water = 40;
             }
+
             public override void SetMilk()
             {
                 Console.WriteLine("Step 2 : Adding milk");
                 GetBeverage().Milk = 50;
             }
+
             public override void SetSugar()
             {
                 Console.WriteLine("Step 3 : Adding Sugar");
                 GetBeverage().Sugar = 10;
             }
+
             public override void SetPowderQuantity()
             {
                 Console.WriteLine("Step 4 : Adding 15 Grams of coffee powder");
                 GetBeverage().PowderQuantity = 15;
             }
+
             public override void SetBeverageType()
             {
                 Console.WriteLine("Coffee");
@@ -76,21 +84,25 @@ namespace DesignPatternCode.Builder
                 Console.WriteLine("Step 1 : Boiling water");
                 GetBeverage().Water = 50;
             }
+
             public override void SetMilk()
             {
                 Console.WriteLine("Step 2 : Adding milk");
                 GetBeverage().Milk = 60;
             }
+
             public override void SetSugar()
             {
                 Console.WriteLine("Step 3 : Adding Sugar");
                 GetBeverage().Sugar = 15;
             }
+
             public override void SetPowderQuantity()
             {
                 Console.WriteLine("Step 4 : Adding 20 Grams of coffee powder");
                 GetBeverage().PowderQuantity = 20;
             }
+
             public override void SetBeverageType()
             {
                 Console.WriteLine("Tea");

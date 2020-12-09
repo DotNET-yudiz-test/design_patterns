@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DoFactory.GangOfFour.Prototype.RealWorld
 {
-    //The intent behind the usage of a Prototype pattern is for creation of an object clone; 
+    //The intent behind the usage of a Prototype pattern is for creation of an object clone;
     //in other words it allows us to create a new instance by copying existing instances.
     public class Developer : ICloneable
     {

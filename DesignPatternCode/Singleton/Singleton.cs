@@ -6,6 +6,7 @@ namespace DoFactory.GangOfFour.Singleton.RealWorld
     public class Singleton
     {
         private static Singleton instance = null;
+
         public Singleton()
         {
             Console.WriteLine("New Object");
@@ -21,6 +22,7 @@ namespace DoFactory.GangOfFour.Singleton.RealWorld
                 return instance;
             }
         }
+
         public void PrintDetails(string message)
         {
             Console.WriteLine(message);
