@@ -1,6 +1,7 @@
+image: microsoft/dotnet:latest
+
 stages:
     - build
-    - test
 
 variables:
     test: "Example.Test"
