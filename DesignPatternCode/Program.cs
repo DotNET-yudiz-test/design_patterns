@@ -16,7 +16,7 @@ namespace DesignPatternCode
             //AbstractFactory
             //Provide an interface for creating related objects without specifying their concrete classes.
 
-            AfricaFactory africa = new AfricaFactory();
+            AfricaFactory africa = new Afr icaFactory();
             AnimalWorld world = new AnimalWorld(africa);
             world.RunFoodChain();
 
