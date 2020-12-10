@@ -10,13 +10,12 @@ namespace DesignPatternCode
 {
     internal class Program
     {
-        //test commit 2
         private static void Main(string[] args)
         {
             //AbstractFactory
             //Provide an interface for creating related objects without specifying their concrete classes.
 
-            AfricaFactory africa = new Afr icaFactory();
+            AfricaFactory africa = new AfricaFactory();
             AnimalWorld world = new AnimalWorld(africa);
             world.RunFoodChain();
 
