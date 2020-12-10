@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace DoFactory.GangOfFour.Prototype.RealWorld
@@ -7,7 +7,7 @@ namespace DoFactory.GangOfFour.Prototype.RealWorld
     //in other words it allows us to create a new instance by copying existing instances.
     public class Developer : ICloneable
     {
-        public string FirstName { get; set; }
+        public string First Name { get; set; }
         public string Lastname { get; set; }
         public List<string> Skills { get; set; }
 
