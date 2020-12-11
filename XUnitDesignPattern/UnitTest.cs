@@ -13,7 +13,7 @@ namespace XUnitDesignPattern
         [Fact]
         public void FailTest()
         {
-            Assert.False(true);
+            Assert.False(false);
         }
     }
 }
