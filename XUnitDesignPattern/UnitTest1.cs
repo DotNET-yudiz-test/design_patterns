@@ -4,7 +4,7 @@ namespace XUnitDesignPattern
 {
     public class UnitTest1
     {
-        [Fact]
+        [Fa     ct]
         public void Test1()
         {
 
