@@ -3,6 +3,7 @@ image: mcr.microsoft.com/dotnet/core/sdk:3.1
 stages:
     - build
     - test
+    - deploy
 
 before_script:
     - "dotnet restore"
@@ -16,3 +17,11 @@ test_job:
     stage: test
     script:
         - "dotnet test"
+
+deploy_job:
+  stage: deploy
+  script:
+    - 'xcopy /y /s ".\DesignPatternCode\bin\Release\Publish\*.*" "E:\Deploy\DesignPatternCode"'
+  dependencies:
+    - build_job
+    - test_job
