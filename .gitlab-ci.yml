@@ -18,12 +18,18 @@ test_job:
     script:
         - "dotnet test"
 
-deploy_job: 
+deploy: 
     stage: deploy
     variables:
-        deploy_path: "./Release"
+        deploy_path: "src/App/"
+    only:
+        - dev
+    artifacts:
+        paths:
+            - src/App/bin/release
+        expire_in: 1 week
     script:
     # cd to where csproj is
     - cd $deploy_path
     # publish the files - this will generate the publish files in bin/release 
-    - dotnet publish
+    - dotnet publish -c release
