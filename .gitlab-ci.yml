@@ -18,10 +18,19 @@ test_job:
     script:
         - "dotnet test"
 
-deploy_job:
-  stage: deploy
-  script:
-    - 'xcopy /y /s ".\DesignPatternCode\bin\Release\Publish\*.*" "E:\Deploy\DesignPatternCode"'
-  dependencies:
-    - build_job
-    - test_job
+deploy_job: 
+    stage: deploy
+    variables:
+        deploy_path: "DesignPatternCode\bin\release"
+    script:
+    # cd to where csproj is
+    - cd $deploy_path
+    # publish the files - this will generate the publish files in bin/release 
+    - dotnet publish -c release
+    # install zip and lftp
+    - apt-get update -qq && apt-get install -y -qq zip lftp 
+    # cd to bin
+    - cd bin
+    # zip release, name zip DesignPatternCode.zip
+    - mkdir prep
+    - zip -r DesignPatternCode release
