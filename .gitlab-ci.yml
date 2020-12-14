@@ -21,7 +21,7 @@ test_job:
 deploy_job: 
     stage: deploy
     variables:
-        deploy_path: "Release"
+        deploy_path: "./Release"
     script:
     # cd to where csproj is
     - cd $deploy_path
