@@ -18,12 +18,10 @@ test_job:
     script:
         - "dotnet test"
 
-deploy: 
+deploy_job: 
     stage: deploy
     variables:
         deploy_path: "src/App/"
-    only:
-        - dev
     artifacts:
         paths:
             - src/App/bin/release
