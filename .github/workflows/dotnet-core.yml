@@ -20,15 +20,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-      
-    # Reference a specific commit
-    - uses: actions/setup-node@74bc508
-    # Reference the major version of a release
-    - uses: actions/setup-node@v1
-    # Reference a minor version of a release
-    - uses: actions/setup-node@v1.2
-    # Reference a branch
-    - uses: actions/setup-node@main
 
   # dotnet build and publish
     - name: Install dependencies
@@ -39,3 +30,8 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name: dotnet publish
       run: dotnet publish -c Release -o dotnetcorewebapp 
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.3
+      with:
+            node-version: '12'
