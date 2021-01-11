@@ -28,11 +28,3 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: dotnet publish
-      run: dotnet publish -c Release -o dotnetcorewebapp 
-
-  # Setup Node.js environment
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.1.3
-      with:
-            node-version: '12'
