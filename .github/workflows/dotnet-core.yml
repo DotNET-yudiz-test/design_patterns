@@ -26,9 +26,8 @@ jobs:
     - name: dotnet publish
       run: dotnet publish -c Debug -o DesignPatternCode
     - name: Simple FTP deploy
-      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        ftp_host: ${{ secrets.FTP_HOST }}
-        ftp_username: ${{ secrets.FTP_USER }}
-        ftp_password: ${{ secrets.FTP_PASSWORD }}
-        delete: true  
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
