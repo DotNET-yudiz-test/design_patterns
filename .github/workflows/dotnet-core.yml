@@ -24,18 +24,13 @@ jobs:
       run: dotnet publish -c Debug -o DesignPatternCode
     - name: Publish
       run: dotnet publish --configuration Debug --output DesignPatternCode
-  Deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
     - name: Get latest code
       uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2  
-    - name: Sync files
+    - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
         ftp-username: ${{ secrets.FTP_USER }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}  
-        local-dir: DesignPatternCode  
