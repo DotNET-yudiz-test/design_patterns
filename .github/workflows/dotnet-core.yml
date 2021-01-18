@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -25,9 +24,17 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: dotnet publish
       run: dotnet publish -c Debug -o DesignPatternCode
-    - name: Simple FTP deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+   
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USER }}
+        host: ${{ secrets.FTP_HOST }}
+        user: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "dist"
+        remoteDir: "www"
