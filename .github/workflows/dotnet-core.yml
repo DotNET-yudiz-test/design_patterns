@@ -20,8 +20,6 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: dotnet publish
-      run: dotnet publish -c Debug -o DesignPatternCode
     - name: Publish
       run: dotnet publish --configuration Debug --output DesignPatternCode
     - name: Get latest code
