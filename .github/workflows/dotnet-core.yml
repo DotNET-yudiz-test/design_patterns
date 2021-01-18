@@ -31,5 +31,4 @@ jobs:
         ftp_host: 13.232.217.47
         ftp_username: Administrator
         ftp_password: ${{ secrets.PROD_FTP_PASSWORD }}
-        dist_target_dir: ./design
         delete: true  
