@@ -25,7 +25,7 @@ jobs:
     - name: dotnet publish
       run: dotnet publish -c Debug -o DesignPatternCode
     - name: Publish
-      run: dotnet publish C:/Users/Yudiz/source/repos/design_patterns/DesignPatternCode/DesignPatternCode.csproj --configuration Debug --output DesignPatternCode
+      run: dotnet publish --configuration Debug --output DesignPatternCode
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
