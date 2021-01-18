@@ -35,6 +35,7 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd/
+        ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
         ftp-username: ${{ secrets.FTP_USER }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}  
+        local-dir: DesignPatternCode  
