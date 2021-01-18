@@ -28,7 +28,7 @@ jobs:
     - name: Simple FTP deploy
       uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
       with:
-        ftp_host: 13.232.217.47
-        ftp_username: Administrator
-        ftp_password: ${{ secrets.PROD_FTP_PASSWORD }}
+        ftp_host: ${{ secrets.FTP_HOST }}
+        ftp_username: ${{ secrets.FTP_USER }}
+        ftp_password: ${{ secrets.FTP_PASSWORD }}
         delete: true  
