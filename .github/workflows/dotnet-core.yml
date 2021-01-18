@@ -23,12 +23,5 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Simple FTP deploy
-      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
-      with:
-        ftp_host: 13.232.217.47
-        ftp_username: Administrator
-        ftp_password: ${{ secrets.PROD_FTP_PASSWORD }}
-        local_source_dir: ./build/
-        dist_target_dir: ./
-        delete: true  
+    - name: dotnet publish
+      run: dotnet publish -c Debug -o DesignPatternCode
