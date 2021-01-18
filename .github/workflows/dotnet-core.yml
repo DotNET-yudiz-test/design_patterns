@@ -24,15 +24,12 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: dotnet publish
       run: dotnet publish -c Debug -o DesignPatternCode
-   
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Upload ftp
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: Publish
+      run: dotnet publish C:/Users/Yudiz/source/repos/design_patterns/DesignPatternCode/DesignPatternCode.csproj --configuration Debug --output DesignPatternCode
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        host: ${{ secrets.FTP_HOST }}
-        user: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server: ${{ secrets.FTP_HOST }}
+        ftp-username: ${{ secrets.FTP_USER }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: DesignPatternCode
