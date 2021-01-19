@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternCode", "Design
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitDesignPattern", "XUnitDesignPattern\XUnitDesignPattern.csproj", "{58A3F3DA-FDB5-4DD5-B501-52AD731F2F1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dir_Debug", "Dir_Debug", "{F66E51EA-5A0F-4BC9-8D97-307C802C2D8C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dir_Release", "Dir_Release", "{7D2B997F-E9D6-4ACF-9A2D-CE1554176719}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
