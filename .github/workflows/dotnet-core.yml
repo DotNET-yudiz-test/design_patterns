@@ -1,5 +1,3 @@
-name: .NET
-
 on:
   push:
     branches: [ master ]
@@ -7,10 +5,9 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  Build:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -23,11 +20,15 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: dotnet publish
-      run: dotnet publish -c Debug -o DesignPatternCode
-    - name: Simple FTP deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - name: Publish
+      run: dotnet publish --configuration Debug --output DesignPatternCode
+    - name: Get latest code
+      uses: actions/checkout@v2.1.0
       with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        fetch-depth: 2  
+    - name: Deploy
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
+        ftp-username: ${{ secrets.FTP_USER }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}  
