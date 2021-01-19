@@ -2,7 +2,6 @@ using Xunit;
 
 namespace XUnitDesignPattern
 {
-    //test again
     public class UnitTest
     {
         [Fact]
