@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-       working-directory: ./dir1  
+       working-directory: ./DesignPatternCode  
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -23,7 +23,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish --configuration Debug --output DesignPatternCode
+      run: dotnet publish --configuration Debug --output ${{ env.working-directory }}
       working-directory: ${{ env.working-directory }}
     - name: Get latest code
       uses: actions/checkout@v2.1.0
