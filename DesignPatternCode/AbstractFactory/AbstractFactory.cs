@@ -2,7 +2,6 @@
 
 namespace DoFactory.GangOfFour.Abstract.RealWorld
 {
-    //testtesttest
     //Provide an interface for creating families of related or dependent objects without specifying their concrete classes. test test
     internal abstract class ContinentFactory
     {
