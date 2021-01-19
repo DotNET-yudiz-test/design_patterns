@@ -7,3 +7,5 @@
 /.vs
 /XUnitDesignPattern/obj
 /XUnitDesignPattern/bin/Debug/netcoreapp3.1
+/DesignPatternCode/bin/Release/netcoreapp3.1
+/XUnitDesignPattern/bin/Release/netcoreapp3.1

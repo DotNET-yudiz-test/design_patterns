@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternCode", "DesignPatternCode\DesignPatternCode.csproj", "{4BF254E5-8E0A-41B4-A0C1-BB48EDCEE505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitDesignPattern", "XUnitDesignPattern\XUnitDesignPattern.csproj", "{58A3F3DA-FDB5-4DD5-B501-52AD731F2F1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitDesignPattern", "XUnitDesignPattern\XUnitDesignPattern.csproj", "{58A3F3DA-FDB5-4DD5-B501-52AD731F2F1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dir_Debug", "Dir_Debug", "{F66E51EA-5A0F-4BC9-8D97-307C802C2D8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dir_Release", "Dir_Release", "{7D2B997F-E9D6-4ACF-9A2D-CE1554176719}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
