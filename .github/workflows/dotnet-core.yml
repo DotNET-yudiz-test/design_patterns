@@ -21,7 +21,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish --configuration Debug --output DesignPatternCode
+      run: dotnet publish --configuration Debug --output master/design_patterns/DesignPatternCode/
     - name: Get latest code
       uses: actions/checkout@v2.1.0
       with:
