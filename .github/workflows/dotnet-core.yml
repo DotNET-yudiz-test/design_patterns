@@ -32,4 +32,3 @@ jobs:
         ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
         ftp-username: ${{ secrets.FTP_USER }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}  
-        local-dir: demo_cicd_design_pattern
