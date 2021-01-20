@@ -8,8 +8,6 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-       working-directory: ./DesignPatternCode  
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -19,12 +17,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build restore -s C:\Users\Yudiz\source\repos\design_patterns\DesignPatternCode\Dir_Debug
+      run: dotnet build
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish --configuration Debug --output ${{ env.working-directory }}
-      working-directory: ${{ env.working-directory }}
+      run: dotnet publish --configuration Debug --output demo_cicd_design_pattern
     - name: Get latest code
       uses: actions/checkout@v2.1.0
       with:
@@ -35,3 +32,4 @@ jobs:
         ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
         ftp-username: ${{ secrets.FTP_USER }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}  
+        LOCAL_DIR: demo_cicd_design_pattern
