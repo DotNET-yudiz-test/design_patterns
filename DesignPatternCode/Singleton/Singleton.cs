@@ -2,6 +2,7 @@
 
 namespace DoFactory.GangOfFour.Singleton.RealWorld
 {
+    //test
     //Ensure a class has only one instance and provide a global point of access to it.
     public class Singleton
     {
