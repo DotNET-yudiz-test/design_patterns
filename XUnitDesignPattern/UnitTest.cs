@@ -4,6 +4,7 @@ namespace XUnitDesignPattern
 {
     public class UnitTest
     {
+        //test
         [Fact]
         public void SuccessTest()
         {
