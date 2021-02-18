@@ -27,7 +27,7 @@ jobs:
       with:
         fetch-depth: 2  
     - name: Deploy
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1 
       with:
         ftp-server: ftp://${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}/demo_cicd_design_pattern/
         ftp-username: ${{ secrets.FTP_USER }}
